@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEEPAK WADHWA OFFICIAL 💵 - Premium Trading Signals</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#fde047', // yellow-300
+                            DEFAULT: '#eab308', // amber/yellow-500 for a more professional gold look
+                            dark: '#a16207',  // yellow-700
+                            accent: '#d97706', // amber-600
+                        },
+                        dark: {
+                            900: '#0f172a', // slate-900
+                            800: '#1e293b', // slate-800
+                            700: '#334155', // slate-700
+                        }
+                    },
+                    boxShadow: {
+                        'glow': '0 0 50px -10px rgba(234, 179, 8, 0.4)',
+                        'btn-glow': '0 10px 40px -10px rgba(234, 179, 8, 0.6)',
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'slide-up': 'slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                        'shimmer': 'shimmer 2s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: '0.4', transform: 'scale(1) translate(-50%, -50%)' },
+                            '50%': { opacity: '0.8', transform: 'scale(1.05) translate(-50%, -50%)' },
+                        },
+                        'slide-up': {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        shimmer: {
+                            'from': { transform: 'translateX(-100%)' },
+                            'to': { transform: 'translateX(200%)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1096611033281091');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1096611033281091&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        body {
+            background-color: #0f172a; /* Slate 900 */
+            color: #f8fafc; /* Slate 50 */
+            overflow-x: hidden; 
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(225,39%,30%,0.2) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(339,49%,30%,0.1) 0, transparent 50%);
+        }
+        
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7); /* slate-800 with opacity */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(to right, #fde047, #eab308, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glow-effect {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* Note: translate is handled by the animation now, but initial state needs it if animation fails */
+            transform: translate(-50%, -50%);
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(circle, rgba(234, 179, 8, 0.25) 0%, rgba(234, 179, 8, 0.05) 40%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+            border-radius: 50%;
+            pointer-events: none;
+            /* Applying animation through tailwind classes below instead to keep transform clean */
+        }
+        
+        .animated-item {
+            opacity: 0; /* Starts hidden, revealed by slide-up */
+        }
+        
+        /* Delay utility classes for staggered animations */
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+    </style>
+</head>
+<body class="antialiased flex flex-col items-center min-h-screen selection:bg-brand selection:text-dark-900 overflow-x-hidden relative">
+
+    <!-- Subtle animated background elements -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-20">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-brand-dark/20 rounded-full blur-[100px] mix-blend-screen animate-pulse" style="animation-duration: 8s;"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-900/30 rounded-full blur-[120px] mix-blend-screen animate-pulse" style="animation-duration: 10s;"></div>
+    </div>
+
+    <!-- Main Wrapper -->
+    <main class="w-full max-w-lg px-6 py-12 sm:py-16 flex flex-col items-center relative z-10">
+        
+        <!-- Logo Section -->
+        <div class="relative w-36 h-36 mt-2 mb-8 animate-float">
+            <!-- Animated Glow -->
+            <div class="absolute top-1/2 left-1/2 w-[140%] h-[140%] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,rgba(234,179,8,0.25)_0%,rgba(0,0,0,0)_70%)] rounded-full -z-10 animate-pulse-glow"></div>
+            
+            <div class="w-full h-full rounded-full p-1 bg-gradient-to-tr from-brand-dark via-brand to-brand-light shadow-glow relative z-10 group overflow-hidden">
+                <div class="absolute inset-0 bg-white/20 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] z-20 pointer-events-none"></div>
+                <!-- 
+                  INSTRUCTIONS FOR ADDING YOUR LOGO:
+                  1. Find the <img> tag below.
+                  2. Replace the 'src' attribute value ("https://placehold.co/400x400/0f172a/eab308?text=DW") 
+                     with the filename or URL of your actual logo image (e.g., "my-logo.jpg" or "assets/logo.png").
+                  3. Make sure your image file is in the same folder as this HTML file, or provide the correct path.
+                -->
+                <img src="https://placehold.co/400x400/0f172a/eab308?text=DW" alt="Deepak Wadhwa Logo" class="w-full h-full object-cover rounded-full border-4 border-dark-900 transition-transform duration-500 group-hover:scale-110">
+            </div>
+        </div>
+
+        <!-- Title & Subtitle -->
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight leading-tight animated-item animate-slide-up delay-100">
+            DEEPAK WADHWA<br>
+            <span class="gold-gradient-text font-serif italic mt-1 block drop-shadow-md">Official 💵</span>
+        </h1>
+        <h2 class="mt-4 text-xs sm:text-sm font-semibold tracking-[0.25em] text-gray-400 uppercase text-center flex items-center justify-center gap-2 animated-item animate-slide-up delay-200">
+            <span class="w-8 h-[1px] bg-gradient-to-r from-transparent to-brand"></span>
+            Premium Trading Signals
+            <span class="w-8 h-[1px] bg-gradient-to-l from-transparent to-brand"></span>
+        </h2>
+
+        <!-- Stats Section (Glassmorphism) -->
+        <div class="glass-panel flex justify-between items-center w-full mt-10 px-4 py-6 rounded-2xl shadow-glass animated-item animate-slide-up delay-300 backdrop-blur-xl relative overflow-hidden group">
+            <!-- Subtle hover effect for panel -->
+            <div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            
+            <!-- Stat 1 -->
+            <div class="flex flex-col items-center justify-center flex-1 border-r border-gray-700/50 relative z-10">
+                <span class="text-2xl sm:text-3xl font-black text-white tracking-tight drop-shadow-sm">100K<span class="text-brand animate-pulse block inline-block">++</span></span>
+                <span class="text-[9px] sm:text-[10px] font-semibold text-brand-light/80 uppercase tracking-widest mt-1">Members</span>
+            </div>
+            <!-- Stat 2 -->
+            <div class="flex flex-col items-center justify-center flex-1 border-r border-gray-700/50 relative z-10">
+                <span class="text-2xl sm:text-3xl font-black text-white tracking-tight drop-shadow-sm">99<span class="text-brand">%</span></span>
+                <span class="text-[9px] sm:text-[10px] font-semibold text-brand-light/80 uppercase tracking-widest mt-1">Accuracy</span>
+            </div>
+            <!-- Stat 3 -->
+            <div class="flex flex-col items-center justify-center flex-1 relative z-10">
+                <span class="text-2xl sm:text-3xl font-black text-white tracking-tight drop-shadow-sm">24<span class="text-brand">/</span>7</span>
+                <span class="text-[9px] sm:text-[10px] font-semibold text-brand-light/80 uppercase tracking-widest mt-1">Support</span>
+            </div>
+        </div>
+
+        <!-- Main CTA Button -->
+        <a href="https://t.me/+K4zaNPYfAwgwZDll" 
+           onclick="trackLeadEvent(event)"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="group mt-10 w-full relative flex items-center justify-center py-4 sm:py-5 px-8 rounded-2xl bg-gradient-to-r from-brand-dark via-brand to-brand-light text-dark-900 font-extrabold text-lg sm:text-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_0_40px_-5px_rgba(234,179,8,0.6)] overflow-hidden animated-item animate-slide-up delay-400">
+            
+            <!-- Continuous subtle shimmer -->
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full animate-shimmer"></div>
+            
+            <span class="relative flex items-center gap-3">
+                JOIN PREMIUM CHANNEL 
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform transition-transform duration-300 group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+            </span>
+        </a>
+
+        <!-- Features Badges Grid -->
+        <div class="grid grid-cols-2 gap-3 sm:gap-4 mt-8 w-full animated-item animate-slide-up delay-500">
+            <!-- Feature 1 -->
+            <div class="glass-panel rounded-xl py-3 px-3 flex items-center justify-start gap-3 hover:bg-dark-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-default border border-gray-800 hover:border-brand/30 group">
+                <div class="w-8 h-8 rounded-full bg-dark-900 flex items-center justify-center text-brand shrink-0 group-hover:scale-110 transition-transform duration-300 group-hover:bg-brand/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                </div>
+                <span class="text-sm font-medium text-gray-200 group-hover:text-white transition-colors">Live Signals</span>
+            </div>
+            <!-- Feature 2 -->
+            <div class="glass-panel rounded-xl py-3 px-3 flex items-center justify-start gap-3 hover:bg-dark-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-default border border-gray-800 hover:border-brand/30 group">
+                <div class="w-8 h-8 rounded-full bg-dark-900 flex items-center justify-center text-brand shrink-0 group-hover:scale-110 transition-transform duration-300 group-hover:bg-brand/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                </div>
+                <span class="text-sm font-medium text-gray-200 group-hover:text-white transition-colors">High Accuracy</span>
+            </div>
+            <!-- Feature 3 -->
+            <div class="glass-panel rounded-xl py-3 px-3 flex items-center justify-start gap-3 hover:bg-dark-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-default border border-gray-800 hover:border-brand/30 group">
+                <div class="w-8 h-8 rounded-full bg-dark-900 flex items-center justify-center text-brand shrink-0 group-hover:scale-110 transition-transform duration-300 group-hover:bg-brand/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                </div>
+                <span class="text-sm font-medium text-gray-200 group-hover:text-white transition-colors">VIP Access</span>
+            </div>
+            <!-- Feature 4 -->
+            <div class="glass-panel rounded-xl py-3 px-3 flex items-center justify-start gap-3 hover:bg-dark-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-default border border-gray-800 hover:border-brand/30 group">
+                <div class="w-8 h-8 rounded-full bg-dark-900 flex items-center justify-center text-brand shrink-0 group-hover:scale-110 transition-transform duration-300 group-hover:bg-brand/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+                <span class="text-sm font-medium text-gray-200 group-hover:text-white transition-colors">Instant Updates</span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-14 mb-4 text-center animated-item animate-fade-in delay-500" style="animation-delay: 800ms;">
+            <p class="text-xs sm:text-sm font-medium text-gray-500">
+                Join 100,000+ Members Already Winning with <br class="block sm:hidden"><span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white font-semibold mt-1 inline-block">DEEPAK WADHWA OFFICIAL</span>
+            </p>
+        </footer>
+
+    </main>
+
+    <script>
+        // Function to handle tracking and redirection
+        function trackLeadEvent(event) {
+            // Track the Lead event in Meta Pixel
+            if(typeof fbq === 'function') {
+                fbq('track', 'Lead');
+                console.log('Meta Pixel Lead event triggered.');
+            }
+            
+            // Allow the default link behavior to proceed to the Telegram link
+            // No need to preventDefault or mock redirect since we have a real href now.
+            // You can optionally add a slight delay here if you want to ensure the pixel fires
+            // before navigating away, but usually standard click tracking handles this.
+        }
+    </script>
+</body>
+</html>
